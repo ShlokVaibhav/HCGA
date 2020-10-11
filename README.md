@@ -8,11 +8,20 @@ A grating waveguide is an optical waveguide where the waveguide is in form of pe
 The period of grating is denoted by &Lambda;,&theta; is the angle of incidence k<sub>0</sub> denotes the wavevector of incident wave, we take surrounding medium to be air, so that n<sub>0</sub>=1, we assume translational symmetry in y-axis so that &phi;=0, n<sub>bar</sub> is the refractive index of bar, we assume that all refractive indices are real. Polarization can be TM or TE. Another variable needed is the duty cycle, or the fraction of space in each period of grating occupied by the bar, we denote this by &eta;.
 All these variables describe the required physics needed to model the device.
 
-Our interest lies in computing the reflectivity and the transmittivity exhibited by the structure for given values of (&Lambda;,k<sub>0</sub>,&theta;,n<sub>bar</sub>, &eta;). The reflectivited and transmittivited power will further be divided into amongst various diffracted beams.
+Our interest lies in computing the reflectivity and the transmittivity exhibited by the structure for given values of (&Lambda;,k<sub>0</sub>,&theta;,n<sub>bar</sub>, &eta;). The reflected and transmitted power will further be divided into amongst various diffracted beams.
 
 We now show the results obtained by our code, then we shall explain how to use the code and then performance issues and limitations will be demonstrated.
 
 <h3>Results</h3>
+
+<h4>Reflectivity Spectrum </h4>
+
+<h4>Field intensity profile</h4>
+
+<center>TE mode</center>          | <center>TM mode</center>
+:-------------------------:|:-------------------------:
+![](Images/TE_1.png)  |  ![](Images/TE_2.png)
+![](Images/TE_2.png)  |  ![](Images/TE_2.png)
 
 <h3>Code</h3>
 
