@@ -20,8 +20,9 @@ We now show the results obtained by our code, then we shall explain how to use t
 
 <center>TE mode</center>          | <center>TM mode</center>
 :-------------------------:|:-------------------------:
-![](Images/TE_1.png)  |  ![](Images/TE_2.png)
-![](Images/TE_2.png)  |  ![](Images/TE_2.png)
+![](Images/TE_1.png)  |  ![](Images/TM_1.png)
+![](Images/TE_2.png)  |  ![](Images/TM_2.png)
+![](Images/TE_3.png)  |  ![](Images/TM_3.png)
 
 <h3>Code</h3>
 
