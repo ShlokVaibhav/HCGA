@@ -15,6 +15,12 @@ We now show the results obtained by our code, then we shall explain how to use t
 <h3>Results</h3>
 
 <h4>Reflectivity Spectrum </h4>
+The reflectivity spectrum obtained using our code with RCWA results superimposed for Benchmarking.
+
+|<center>TE mode</center>          | <center>TM mode</center>|
+|-------------------------|-------------------------|
+|![](Images/ref_HCG_TE.jpg)  |  ![](Images/ref_HCG_TM.jpg)|
+|![](Images/ref_HCG_wafer_HCG_TE.jpg)  |  ![](Images/ref_HCG_wafer_HCG_TM.jpg)|
 
 <h4>Field intensity profile</h4>
 
