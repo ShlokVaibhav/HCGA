@@ -1,4 +1,4 @@
-function [mid]=selfmade_fsolve(n,theta,ita,lambda)
+function [mid]=selfmade_fsolve_TM(n,theta,ita,lambda)
 
 x=lambda;
 val=[];

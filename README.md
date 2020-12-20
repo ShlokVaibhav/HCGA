@@ -31,10 +31,19 @@ The reflectivity spectrum obtained using our code with RCWA results superimposed
 |![](Images/TE_3.png)  |  ![](Images/TM_3.png)|
 
 <h3>Code</h3>
+The main code is <strong>HCG_central_node</strong>. The various callee and caller functions are shown:
+<br>
 
+![Tux](Images/Flowchart.png)
 <h3>Performance and issues</h3>
 
-
+| Functionality      | Results benchmarked? | Source for benchmarking|
+| ----------- | ----------- | ---------|
+|  TM mode reflectivity   | - [x]   | RCWA|    
+|  TE mode reflectivity  | - [x]    |RCWA|
+| TM mode field profile |   - []    ||
+| TE mode field profile| - [x]      |Compated with Results in <a href="https://www.osapublishing.org/aop/abstract.cfm?uri=aop-4-3-379">High-contrast gratings for integrated optoelectronics<br> Connie J. Chang-Hasnain and Weijian Yang
+</a>|
 
 <h3>References</h3>
 

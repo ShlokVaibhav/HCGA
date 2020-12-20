@@ -1,17 +1,19 @@
-function [c]=get_modes(n,theta,ita,inn,num)
+function [c]=get_modes_TE(n,theta,ita,inn,num)
     x=inn;
     count=sqrt(inn.^2*(n^2-1));
-    f=@(y)((1+sign(count-y))*((y.*(sqrt(-y.^2+x.^2*(n^2-1)))./n^2.*(2*cos(2*pi.*x.*sin(theta*pi/180))-2*cosh((2*pi*sqrt(-y.^2+x.^2*(n^2-1))).*(1-ita)).*cos(y*2*pi*ita))+sinh((2*pi*sqrt(-y.^2+x.^2*(n^2-1)))*(1-ita)).*sin((y*2*pi)*ita).*(-(sqrt(-y.^2+x.^2*(n^2-1))).^2+y.^2./n^4))/(1+abs(cosh((2*pi*sqrt(-y.^2+x.^2*(n^2-1))).*(1-ita))))));
-    g=@(y)((1+sign(y-count))*(y.*(sqrt(y.^2-x.^2*(n^2-1)))./n^2.*(2*cos(2*pi.*x.*sin(theta*pi/180))-2*cos((2*pi*sqrt(y.^2-x.^2*(n^2-1))).*(1-ita)).*cos(y*2*pi*ita))+sin((2*pi*sqrt(y.^2-x.^2*(n^2-1)))*(1-ita)).*sin(y*2*pi*ita).*((sqrt(y.^2-x.^2*(n^2-1))).^2+(y).^2./n^4)));
-%     h=@(y)(real((1+sign(count-y)).*((y*2*pi/ita).*(2*pi*sqrt(-y.^2+x.^2*(n^2-1)*ita^2)/ita)./n^2.*(2*cos(2*pi.*x.*sin(theta*pi/180))-2*cosh((2*pi*sqrt(-y.^2+x.^2*(n^2-1)*ita^2)/ita).*(1-ita)).*cos((y*2*pi/ita)*ita))+sinh((2*pi*sqrt(-y.^2+x.^2*(n^2-1)*ita^2)/ita)*(1-ita)).*sin((y*2*pi/ita)*ita).*(-(2*pi*sqrt(-y.^2+x.^2*(n^2-1)*ita^2)/ita).^2+(y*2*pi/ita).^2./n^4))/(1+abs(cosh((2*pi*sqrt(-y.^2+x.^2*(n^2-1)*ita^2)/ita).*(1-ita))))+(1+sign(y-count)).*((y*2*pi/ita).*(2*pi*sqrt(y.^2-x.^2*(n^2-1)*ita^2)/ita)./n^2.*(2*cos(2*pi.*x.*sin(theta*pi/180))-2*cos((2*pi*sqrt(y.^2-x.^2*(n^2-1)*ita^2)/ita).*(1-ita)).*cos((y*2*pi/ita)*ita))+sin((2*pi*sqrt(y.^2-x.^2*(n^2-1)*ita^2)/ita)*(1-ita)).*sin((y*2*pi/ita)*ita).*((2*pi*sqrt(y.^2-x.^2*(n^2-1)*ita^2)/ita).^2+(y*2*pi/ita).^2./n^4))));
- 
+    % cutoff where k_a = 0
+    f=@(y)((1+sign(count-y))*((y.*(sqrt(-y.^2+x.^2*(n^2-1))).*(2*cos(2*pi.*x.*sin(theta*pi/180))-2*cosh((2*pi*sqrt(-y.^2+x.^2*(n^2-1))).*(1-ita)).*cos(y*2*pi*ita))+sinh((2*pi*sqrt(-y.^2+x.^2*(n^2-1)))*(1-ita)).*sin((y*2*pi)*ita).*(-(sqrt(-y.^2+x.^2*(n^2-1))).^2+y.^2))/(1+abs(cosh((2*pi*sqrt(-y.^2+x.^2*(n^2-1))).*(1-ita))))));
+    % when k_a is imaginary
+    g=@(y)((1+sign(y-count))*(y.*(sqrt(y.^2-x.^2*(n^2-1))).*(2*cos(2*pi.*x.*sin(theta*pi/180))-2*cos((2*pi*sqrt(y.^2-x.^2*(n^2-1))).*(1-ita)).*cos(y*2*pi*ita))+sin((2*pi*sqrt(y.^2-x.^2*(n^2-1)))*(1-ita)).*sin(y*2*pi*ita).*((sqrt(y.^2-x.^2*(n^2-1))).^2+(y).^2)));
+    % when k_a is real
     h=@(y)f(y)+g(y);
+    
     begin=0;
     up=1;
     c=[];
     begin=0;
     if(count<0.1)
-        c=[c FindRealRoots(f,0,count-0.01,50)];
+        c=[c FindRealRoots(f,0,count-0.01,500)];
     else
         while(begin<count-0.005)
             if(begin+1>count-0.005)
@@ -41,7 +43,7 @@ function [c]=get_modes(n,theta,ita,inn,num)
             c(1)=[];
         end
     end
-    d=selfmade_fsolve(n,theta,ita,x);
+    d=selfmade_fsolve_TE(n,theta,ita,x);
     c=[c;d];
     m=size(c,1);
      if(m>1)
@@ -65,17 +67,13 @@ while(size(c,1)<num+2)
     if(begin==count+0.005)
         cc=FindRealRoots(g,begin,begin+0.5,50);
         if(size(cc,1)==0)
-            if(h(begin)*h(begin+0.5)>0)
             cc=FindRealRoots(g,begin,begin+0.5,100);
-            end
         end
         c=[c;cc];
     else
         cc=FindRealRoots(g,begin,begin+0.5,50);
         if(size(cc,1)==0)
-            if(h(begin)*h(begin+0.5)>0)
             cc=FindRealRoots(g,begin,begin+0.5,100);
-            end
         end
         c=[c;cc];
     end

@@ -1,15 +1,7 @@
-function [Hnm,Enm] = overlap2(kam,ksm,kx0,n1,cft,a,s,kxn,n,eigenvalues,gamman,type,l)
-%% calculating the overlap integral
+function [Hnm,Enm] = overlap(kam,ksm,kx0,n1,cft,a,s,kxn,n,eigenvalues,gamman,type,l)
+%% calculating the overlap integral H and E
 m=size(kam,1);     %no. of modes
-
 %% Now all the matrices are n*m, we can now vectorise the calculation for the overlap integral
-%H1=1./(kxn2.^2-kam2.^2).*(-(1+exp(i*kxn2.*a)).*sin(u).*(i*b2.*kxn2+a2.*kam2)+(-1+exp(i*kxn2.*a)).*cos(u).*(-i*a2.*kxn2+b2.*kam2));
-%H2=1./(kxn2.^2-ksm2.^2).*(-(exp(i*kxn2.*l)+exp(i*kxn2.*a)).*sin(v).*(i*d2.*kxn2+c2.*ksm2)+(-exp(i*kxn2.*l)+exp(i*kxn2.*a)).*cos(v).*(i*c2.*kxn2-d2.*ksm2));
-%Hnm=H1+H2;
-%Enm=(H1+1/n^2*H2).*eigenvalues2./gamman2;  %TM mode
-%Enm=(Hnm).*gamman2./eigenvalues2   %TE mode
-%Hnm=Hnm/l;
-%Enm=Enm/l;
 Hnm=zeros(2*n1+1,m);
 Hnm21=zeros(2*n1+1,m);       %n*m matrix
 Hnm22=zeros(2*n1+1,m);       %n*m matrix

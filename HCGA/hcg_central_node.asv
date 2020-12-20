@@ -1,4 +1,4 @@
-function [r_temp, t_temp]=hcg_central_node(gp,lambda,theta,ita, n_sub,n,tg,num_eigen,type,plot_enable,r_order)
+function [r_temp, t_temp,aa]=hcg_central_node(gp,lambda,theta,ita, n_sub,n,tg,num_eigen,type,plot_enable,r_order)
 % gp - Grating period
 % lambda - wavelength
 % theta - in degress
@@ -11,9 +11,10 @@ function [r_temp, t_temp]=hcg_central_node(gp,lambda,theta,ita, n_sub,n,tg,num_e
 % num_eigen - no. of modes used, must be even, 25 is good
 % type  - 'TE' or 'TM'
 % plot_enable - 'Y' to plot field profile, 'N' to not
-% r_order - provide if reflectivity for a particular mode is needed, beta stage
+% r_order - provide if 
 
 mesh_density=1000;
+close all;
 eigen=[];
 for i=1:size(tg,1)
     if(type=='TE')
