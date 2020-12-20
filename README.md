@@ -39,10 +39,10 @@ The main code is <strong>HCG_central_node</strong>. The various callee and calle
 
 | Functionality      | Results benchmarked? | Source for benchmarking|
 | ----------- | ----------- | ---------|
-|  TM mode reflectivity   | - [x]   | RCWA|    
-|  TE mode reflectivity  | - [x]    |RCWA|
-| TM mode field profile |   - []    ||
-| TE mode field profile| - [x]      |Compated with Results in <a href="https://www.osapublishing.org/aop/abstract.cfm?uri=aop-4-3-379">High-contrast gratings for integrated optoelectronics<br> Connie J. Chang-Hasnain and Weijian Yang
+|  TM mode reflectivity   | <center>&#9745;</center>    | RCWA|    
+|  TE mode reflectivity  | <center>&#9745;</center>    |RCWA|
+| TM mode field profile |   <center>&#9746;</center>    ||
+| TE mode field profile| <center>&#9745;</center>      |Compated with Results in <a href="https://www.osapublishing.org/aop/abstract.cfm?uri=aop-4-3-379">High-contrast gratings for integrated optoelectronics<br> Connie J. Chang-Hasnain and Weijian Yang
 </a>|
 
 <h3>References</h3>
