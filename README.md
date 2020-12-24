@@ -1,3 +1,13 @@
+This work belongs to the <a href="http://www.ee.iitb.ac.in/~stallur/index.php/">AIMS Lab</a>, Indian Institute of Technology Bombay, prepared under the guidance of <a href="http://www.ee.iitb.ac.in/~stallur/index.php/">Professor Siddharth Tallur</a>.
+The code has been employed to investigate the results published in our journal article   :
+
+<strong>Pallabi Das, Shlok Vaibhav Singh and Siddharth Tallur, 
+<a href="https://iopscience.iop.org/article/10.1088/1361-6641/abbc8d">Design and analysis of electro-optic modulators based on high contrast gratings in AlGaN/GaN heterostructures</a> Semiconductor Science and Technology (IOP Publishing), 35.12, 125022, October 2020</strong>
+
+The analytical model used was developed in C. J. Chang-Hasnain and W. Yang, High-contrast gratings for
+integrated optoelectronics," Advances in Optics and Photonics
+4, 379-440 (2012)
+
 # Grating Analysis Code
 
 This repository hosts the code for analysis of the some electromagnetic properties of Grating structures.
@@ -47,7 +57,8 @@ The main code is <strong>HCG_central_node</strong>. The various callee and calle
 
 <h3>References</h3>
 
-* <a href="https://www.osapublishing.org/aop/abstract.cfm?uri=aop-4-3-379">High-contrast gratings for integrated optoelectronics<br> Connie J. Chang-Hasnain and Weijian Yang
-</a><br> This is the primary reference where the analytical derivation of the model is carried out.
+* <div name="Connie"><a href="https://www.osapublishing.org/aop/abstract.cfm?uri=aop-4-3-379">High-contrast gratings for integrated optoelectronics<br> Connie J. Chang-Hasnain and Weijian Yang
+</a> This is the primary reference where the analytical derivation of the model is carried out.
+</div>
 
 * <a href="https://in.mathworks.com/matlabcentral/fileexchange/55401-ppml-periodically-patterned-multi-layer">PPML-Periodically Patterned Multi Layer, Simone Zanotto</a><br>
